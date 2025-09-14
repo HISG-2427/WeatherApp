@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+body {
+    background: url("images/WeatherBackgroud.jpg");
+    background-position: cover;
+    font-family: "Outfit";
+    text-align: center;
+    color: white;
+}
+.container {
+    position: relative;
+    top: 10px;
+    left: 90px;
+    width: 400px;
+    height: 550px;
+    padding: 1em;
+    background: transparent;
+    backdrop-filter: blur(30px);
+    border: 1px solid rgb(6, 148, 243);
+    border-radius: 20px;
+}
+.weather-info img {
+    margin-top: 0.7em;
+    width: 250px;
+}
+.search-box {
+    width: 99%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    border-radius: 3%;
+}
+.search-box input, .search-box button {
+    background: transparent;
+    outline: none;
+    border: none;
+}
+.search-box button {
+    font-size: 20px;
+    color: white;
+}
+input {
+    font-size: 20px;
+    margin-left: 10px;
+    padding: 9px;
+}
+input::placeholder {
+    color: white;
+}
+input[type="text"]{
+    color: white;
+}
+.weather-info {
+    font-size: 50px;
+    padding: 0;
+}
+.temperature, .description {
+    margin-top: 0;
+}
+.weather-info sup {
+    font-size: 24px;
+}
+article {
+    font-size: 35px;
+    padding-top: 0;
+}
+.additional-info {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    animation: slideIn both;
+    animation-duration: 1200ms;
+}
+.additional-info i{
+    font-size: 35px;
+}
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+.humidity, .wind {
+    position: relative;
+    display: flex;
+}
+.humidity {
+    margin-right: 5em;
+}
+.wind i {
+    margin-right: 15px;
+}
