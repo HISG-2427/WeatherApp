@@ -113,10 +113,6 @@ article {
     font-size: 22px;
     font-weight: 500;
 }
-.default-img {
-    position: relative;
-    top: 220px;
-}
 
 @media screen and (max-width: 532px) {
     .container {
