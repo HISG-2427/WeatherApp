@@ -4,14 +4,18 @@ const additionalInfo = document.querySelector(".additional-info");
 const weatherInfo = document.querySelector(".weather-info");
 const notFound = document.querySelector(".not-found");
 const container = document.querySelector(".container");
+const defaultImg = document.querySelector(".default-img");
 
 searchButton.addEventListener("click", (e) => {
     e.preventDefault(); 
+
+    container.style.border = "none";
 
     if (!input.value) {
         alert("Please Type Something!!!");
     }
     else {
+        defaultImg.style.visibility = "hidden";
         container.style.top = "10px";
 
         const key = '4a3859186dbabdd652e466a270aab3ec';

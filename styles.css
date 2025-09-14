@@ -9,7 +9,7 @@ body {
 }
 .container {
     position: relative;
-    top: 250px;
+    top: 230px;
     left: 90px;
     width: 400px;
     height: 40px;
@@ -112,6 +112,10 @@ article {
 .not-found p {
     font-size: 22px;
     font-weight: 500;
+}
+.default-img {
+    position: relative;
+    top: 220px;
 }
 
 @media screen and (max-width: 532px) {
