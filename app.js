@@ -22,6 +22,8 @@ searchButton.addEventListener("click", (e) => {
             if (json.cod == "404") {
                 container.style.height = "500";
                 notFound.style.visibility = "visible";
+                additionalInfo.style.visibility = "hidden";
+                weatherInfo.style.visibility = "hidden";
                 return;
             }
 
@@ -31,6 +33,7 @@ searchButton.addEventListener("click", (e) => {
             const infoWind = document.querySelector(".info-wind");
             const description = document.querySelector(".description");
 
+            notFound.style.visibility = "hidden";
             additionalInfo.style.visibility = "visible";
             weatherInfo.style.visibility = "visible";
 
@@ -57,7 +60,6 @@ searchButton.addEventListener("click", (e) => {
                     weatherImg.src = "images/cloud.png";
                     break;
             }
-            console.log(json.wind);
             temperature.innerHTML = `${parseInt(json.main.temp)} <span>°C</span>`;
             description.innerHTML = `${json.weather[0].description.toUpperCase()}`;
             infoHumidity.innerHTML = `${json.main.humidity}%`;
