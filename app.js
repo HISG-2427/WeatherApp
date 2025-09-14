@@ -1,7 +1,13 @@
 const searchButton = document.querySelector(".search-box button");
 const input = document.querySelector(".search-box input");
+const additionalInfo = document.querySelector(".additional-info");
+const weatherInfo = document.querySelector(".weather-info");
+const notFound = document.querySelector(".not-found");
+const container = document.querySelector(".container");
 
-searchButton.addEventListener("click", () => {
+searchButton.addEventListener("click", (e) => {
+    e.preventDefault(); 
+
     if (!input.value) {
         alert("Please Type Something!!!");
     }
@@ -11,11 +17,20 @@ searchButton.addEventListener("click", () => {
 
         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${key}`).then(response => response.json()).then(json => {
 
+            if (json.cod == "404") {
+                container.style.height = "500";
+                notFound.style.visibility = "visible";
+                return;
+            }
+
             const weatherImg = document.querySelector(".weather-img");
-            const temperaure = document.querySelector(".temperaure");
-            const infoHumidity = document.querySelector(".infoHumidity");
-            const infoWind = document.querySelector(".infoWind");
+            const temperature = document.querySelector(".temperature");
+            const infoHumidity = document.querySelector(".info-humidity");
+            const infoWind = document.querySelector(".info-wind");
             const description = document.querySelector(".description");
+
+            additionalInfo.style.visibility = "visible";
+            weatherInfo.style.visibility = "visible";
 
             switch (json.weather[0].main) {
                 case 'Clear':
@@ -40,8 +55,9 @@ searchButton.addEventListener("click", () => {
                     weatherImg.src = "images/cloud.png";
                     break;
             }
-            temperaure.innerHTML = `${parseInt(json.main.temp)} <span>°C</span>`;
-            description.innerHTML = `${json.weather[0].description}`;
+            console.log(json.wind);
+            temperature.innerHTML = `${parseInt(json.main.temp)} <span>°C</span>`;
+            description.innerHTML = `${json.weather[0].description.toUpperCase()}`;
             infoHumidity.innerHTML = `${json.main.humidity}%`;
             infoWind.innerHTML = `${json.wind.speed}km/h`;
         })
