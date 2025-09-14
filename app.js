@@ -12,6 +12,8 @@ searchButton.addEventListener("click", (e) => {
         alert("Please Type Something!!!");
     }
     else {
+        container.style.top = "10px";
+
         const key = '4a3859186dbabdd652e466a270aab3ec';
         const city = input.value;
 
