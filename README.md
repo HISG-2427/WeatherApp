@@ -48,3 +48,4 @@ requests.
 ● Ensure that you are complying with the terms and conditions of the chosen weather API,
 especially if you plan to deploy the app publicly.
 
+LIVE LINK: https://hisg-2427.github.io/WeatherApp
